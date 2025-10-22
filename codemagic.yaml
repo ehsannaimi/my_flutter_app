@@ -1,0 +1,15 @@
+workflows:
+  flutter-workflow:
+    name: Flutter APK Debug
+    max_build_duration: 60
+    environment:
+      flutter: stable
+      vars:
+        FLUTTER_CHANNEL: stable
+    scripts:
+      - name: Get dependencies
+        script: flutter pub get
+      - name: Build APK
+        script: flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/app-debug.apk
