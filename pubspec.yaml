@@ -1,0 +1,26 @@
+
+name: icspi_app
+description: A modern Flutter app with custom icons and gradient design.
+publish_to: 'none'
+version: 1.0.0+1
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  url_launcher: ^6.3.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/logo.png
+    - assets/images/contact.png
+    - assets/images/magazine.png
+    - assets/images/eitaa.png
+    - assets/images/donation.png
+
+dev_dependencies:
+  flutter_launcher_icons: ^0.13.1
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/logo.png"
