@@ -11,11 +11,15 @@ workflows:
       - name: Build debug APK
         script: |
           flutter build apk --debug --target-platform android-arm,android-arm64
+          echo "=== Build folder structure ==="
           ls -R build/ || true
     artifacts:
+      # مسیرهای معمول Flutter
       - build/app/outputs/flutter-apk/app-debug.apk
       - build/app/outputs/apk/debug/app-debug.apk
-      - build/app/outputs/apk/release/app-release.apk
+      # مسیرهای جدید (native_assets)
+      - build/native_assets/android/**/*.apk
+      - build/native_assets/**/*.apk
     publishing:
       email:
         recipients:
